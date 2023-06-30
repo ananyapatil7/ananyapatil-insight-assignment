@@ -1,17 +1,17 @@
 INSTRUCTIONS FOR RUNNING WEBSITE:
 
 Requirements: 
-The following should be installed - python, pip, django; python should be added to PATH in environment variables
+The following should be installed - python, pip, django; python should be added to PATH variables in environment variables settngs.
 
 Steps:
 1. Install pipenv and add it to the PATH variables; restart the terminal to make sure that the updated PATH variable takes effect.
 2. Create a new directory, install django in that file by running the command 'pipenv install django', this will create a virtual environment.
-3. Navigate to the virtual environment, open it, and run the command 'scripts\activate.ps1' to activate the virtual environment
+3. Navigate to the virtual environment, open it, and run the command 'scripts\activate.ps1' to activate the virtual environment.
 4. Navigate to the downloaded code files from GitHub and open the folder 'section2_insightfulreads' in the terminal.
 5. Run the command 'python manage.py runserver' to start the Django development server.
-6. Access the website on the link 'http://127.0.0.1:8000/'
+6. Access the website on the link 'http://127.0.0.1:8000/'.
 
 
 INSTRUCTIONS FOR RUNNING THE CODE FOR SECTION 3:
 Run the file, enter the integers separated by one space and press enter to submit the input.
-After pressing enter the ouput would be displayed
+After pressing enter the ouput would be displayed.
