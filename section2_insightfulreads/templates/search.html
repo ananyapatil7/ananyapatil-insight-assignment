@@ -1,0 +1,37 @@
+{% extends 'basic.html' %}
+
+{% block title %} Search Results {% endblock %}
+
+{% block body %}
+
+    {% if status == 'not_found' %}
+        <div class="container my-5" style="text-align: center;">
+            No results found for "{{ search }}"
+        </div>
+    {% endif %}    
+
+    {% if status == 'article' %}
+
+        <div class="container-fluid col-lg-6 my-5">
+            1 result found for '{{ name }}':
+            <br>
+            <br>
+            <div class="card mb-3" style="max-width: 800px; background-color: #81B6BE;">
+                <div class="row g-0">
+
+                <div class="col-md-8">
+                    <div class="card-body" style="color:#3B3838">
+                    <h6 class="card-title"> <strong> <a href='#' style="color:#3B3838">{{ name }}</a></strong></h6>
+                    By {{ author }} 
+                    <br>
+                    Published on {{ date }} 
+                    <br>
+                    Category: {{ category }}
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+ 
+{% endblock %}

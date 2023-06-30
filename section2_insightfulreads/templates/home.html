@@ -1,0 +1,55 @@
+{% extends 'basic.html' %}
+
+{% block title %} Insightful Reads - Home {% endblock %}
+
+{% block body %}
+
+
+  {% if purpose != '' and purpose != 'searched' %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong> The article '{{ article }}' was {{ purpose }} successfully! </strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endif %}
+
+  <div class="container-fluid col-lg-6 my-5">
+
+    {% if purpose == 'searched' %}
+
+      {% if n == 1 %}
+        {{ n }} result
+      {% endif %}
+
+      {% if n != 1 %}
+        {{ n }} results
+      {% endif %}
+      
+      found for '{{ search }}':
+      <br>
+      <br>
+    {% endif %}    
+
+    {% for i in range %}
+      <li data-target="#demo" data-slide-to="{{i}}" style="list-style-type: none;" ></li>
+    {% endfor %}    
+
+    {% for i in articles|slice:"0:" %}
+      <div class="card mb-3" style="max-width: 800px; background-color: #81B6BE;">
+          <div class="row g-0">
+            <div class="col-md-8">
+              <div class="card-body" style="color:#3B3838">
+                <h6 class="card-title"> <strong> <a href='http://127.0.0.1:8000/article?article={{i.article_name}}' style="color:#3B3838">{{i.article_name}}</a></strong></h6>
+                By {{i.author_name}} 
+                <br>
+                Published on {{i.publishing_date}} 
+                <br>
+                Category: {{i.category}}
+              </div>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+
+  </div>
+
+{% endblock %}

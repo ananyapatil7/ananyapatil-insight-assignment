@@ -1,0 +1,23 @@
+{% extends 'basic.html' %}
+
+{% block title %} Insightful Reads {% endblock %}
+
+{% block body %}
+
+  <div class="container-fluid col-lg-6 my-5">
+    <div class="card pt-5 pb-3 px-5 mb-3" style="max-width: 800px; background-color: #81B6BE;">
+        <h3 style="text-align:center"> {{ name }} </h3>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h6 style="text-align:left">By <strong>{{ author }} </strong></h6>
+            </div>
+            <div class="col text-end">
+                <h6>Category - <strong>{{ category }} </strong></h6>
+            </div>
+        </div>
+        <h6>Published on {{ date }}</h6>
+    </div>
+  </div>
+
+{% endblock %}

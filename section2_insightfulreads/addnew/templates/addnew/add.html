@@ -1,0 +1,61 @@
+{% extends 'basic.html' %}
+
+{% block title %} Add New Article {% endblock %}
+
+{% block body %}
+
+  {% if status == 'false' %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong> Please fill in all fields. </strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endif %}
+
+  <div class="container mt-4 mb-2 mx-5">
+    <form action="/add/added" method="get">
+      <h5>Enter details of new article:</h5>
+      <br>
+      
+      <div class="form-group row my-2">
+        <label for="article" class="col-sm-2 col-form-label">Article Name</label>
+        <div class="col-sm-5">
+          <input class="form-control col-sm-5"  type="article" name="article" placeholder="Enter Article Name">
+        </div>
+      </div>
+
+      <div class="form-group row my-2">
+        <label for="author" class="col-sm-2 col-form-label">Author's Name</label>
+        <div class="col-sm-5">
+          <input class="form-control col-sm-5"  type="author" name="author" placeholder="Enter Author's Name">
+        </div>
+      </div>
+
+      <div class="form-group row my-2">
+        <label for="date" class="col-sm-2 col-form-label">Publishing Date</label>
+        <div class="col-sm-5">
+          <input class="form-control col-sm-5"  type="date" name="date">
+        </div>
+      </div>
+
+      <div class="form-group row my-2">
+        <label for="category" class="col-sm-2 col-form-label">Category</label>
+        <div class="col-sm-5">
+          <select class="form-select" placeholder="Select Category" name="category">
+            <option value="Select">Select Category</option>
+            <option value="Finance">Finance</option>
+            <option value="Science And Technology">Science And Technology</option>
+            <option value="Travel">Travel</option>
+            <option value="Wellness">Wellness</option>
+            
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+  
+      <br>
+      <button type="submit" class="btn btn-outline-dark">Submit</button>
+    
+    </form>
+  </div>
+
+{% endblock %}
